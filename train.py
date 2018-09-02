@@ -67,10 +67,10 @@ def train_func(config):
        var_list=['conv1/','block']
        for var in import_variables: 
            if any(elem in var.name for elem in var_list):
-              initialize_variables[var.name]=var
+              initialize_variables[var.name.split(':')[0]]=var
               
        
-       saver=tf.train.Saver(import_variables)
+       saver=tf.train.Saver(initialize_variables)
        saver.restore(save_path=config['intialize'],sess=sess)
        saver=tf.train.Saver(max_to_keep=1000)
        model.create_optimizer()  

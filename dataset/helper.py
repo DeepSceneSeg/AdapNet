@@ -125,13 +125,13 @@ def parser_forest(proto_data,num_classes):
     label=tf.squeeze(label, axis=2)
     
     image=tf.reshape(image,[channel_rgb,height,width])
-    image=tf.transpose(image,[1,2,0])
+    #image=tf.transpose(image,[1,2,0])
     
     depth=tf.reshape(depth,[channel_depth,height,width])
-    depth=tf.transpose(depth,[1,2,0])
+    #depth=tf.transpose(depth,[1,2,0])
     
     evi=tf.reshape(evi,[channel_evi,height,width])
-    evi=tf.transpose(evi,[1,2,0])
+    #evi=tf.transpose(evi,[1,2,0])
 
     return tf.cast(image,tf.float32),tf.cast(label,tf.float32),tf.cast(depth,tf.float32),tf.cast(evi,tf.float32)
 def parser(proto_data,num_classes):
@@ -165,13 +165,13 @@ def parser(proto_data,num_classes):
     label=tf.squeeze(label, axis=2)
     
     image=tf.reshape(image,[channel_rgb,height,width])
-    image=tf.transpose(image,[1,2,0])
+    #image=tf.transpose(image,[1,2,0])
     
     depth=tf.reshape(depth,[channel_depth,height,width])
-    depth=tf.transpose(depth,[1,2,0])
+    #depth=tf.transpose(depth,[1,2,0])
     
     hha=tf.reshape(hha,[channel_depth,height,width])
-    hha=tf.transpose(hha,[1,2,0])
+    #hha=tf.transpose(hha,[1,2,0])
     
 
     return tf.cast(image,tf.float32),tf.cast(label,tf.int32),tf.cast(depth,tf.float32),tf.cast(hha,tf.float32)
