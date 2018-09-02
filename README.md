@@ -16,33 +16,15 @@ year = "2017",
 }
 ```
 
-Some segmentation results:
-<p align="center">
-    <img src="images/city1.png" width=400>
-    <img src="images/city1_pred_v1.png" width=400>
-   
-</p>
-<p align="center">
-    <img src="images/forest1.png" width=400>
-    <img src="images/forest1_pred_v1.png" width=400>
-   
-</p>
-<p align="center">
-    <img src="images/sun1.png" width=400>
-    <img src="images/sun1_pred_v1.png" width=400>
-   
-</p>
-<p align="center">
-    <img src="images/synthia1.png" width=400>
-    <img src="images/synthia1_pred_v1.png" width=400>
-   
-</p>
-<p align="center">
-    <img src="images/scannet1.png" width=400>
-    <img src="images/scannet1_pred_v1.png" width=400>
-   
-</p>
+## Some segmentation results:
 
+| Dataset       | RGB_Image     | Segmented_Image|
+| ------------- | ------------- | -------------  |
+| Cityscapes    |<img src="images/city1.png" width=400> |  <img src="images/city1_pred_v1.png" width=400>|
+| Forest  | <img src="images/forest1.png" width=400>  |<img src="images/forest1_pred_v1.png" width=400> |
+| Sun  | <img src="images/sun1.png" width=400>  | <img src="images/sun1_pred_v1.png" width=400>|
+| Synthia  | <img src="images/synthia1.png" width=400>  | <img src="images/sun1_pred_v1.png" width=400> |
+| Scannetv2  | <img src="images/scannet1.png" width=400>  |<img src="images/scannet1_pred_v1.png" width=400> |
 ## System requirement
 
 #### Programming language
@@ -55,7 +37,7 @@ tensorflow-gpu 1.4.0
 ```
 ## Configure the network
 
-Download resnet_v1_50 tensorflow pre-trained model for network intialization
+Download resnet_v1_50 tensorflow pre-trained model for network intialization from [here](https://github.com/tensorflow/models/tree/master/research/slim).
 
 #### Training
 ```
