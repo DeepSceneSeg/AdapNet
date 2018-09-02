@@ -16,7 +16,7 @@ year = "2017",
 }
 ```
 
-## Some segmentation results:
+<!--## Some segmentation results:
 
 | Dataset       | RGB_Image     | Segmented_Image|
 | ------------- | ------------- | -------------  |
@@ -24,7 +24,7 @@ year = "2017",
 | Forest  | <img src="images/forest1.png" width=400>  |<img src="images/forest1_pred_v1.png" width=400> |
 | Sun  | <img src="images/sun1.png" width=400>  | <img src="images/sun1_pred_v1.png" width=400>|
 | Synthia  | <img src="images/synthia1.png" width=400>  | <img src="images/sun1_pred_v1.png" width=400> |
-| Scannetv2  | <img src="images/scannet1.png" width=400>  |<img src="images/scannet1_pred_v1.png" width=400> |
+| Scannetv2  | <img src="images/scannet1.png" width=400>  |<img src="images/scannet1_pred_v1.png" width=400> |-->
 ## System requirement
 
 #### Programming language
