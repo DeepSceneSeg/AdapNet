@@ -24,7 +24,7 @@ year = "2017",
 | Forest  | <img src="images/forest.png" width=400>  |<img src="images/forest_v1.png" width=400> |
 | Sun  | <img src="images/sun.png" width=400>  | <img src="images/sun_v1.png" width=400>|
 | Synthia  | <img src="images/synthia.png" width=400>  | <img src="images/synthia_v1.png" width=400> |
-| Scannetv2  | <img src="images/scannet.png" width=400>  |<img src="images/scannet_v1.png" width=400> |
+| Scannetv2  | <img src="images/scannetv2.png" width=400>  |<img src="images/scannetv2_v1.png" width=400> |
 ## System requirement
 
 #### Programming language
