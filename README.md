@@ -2,7 +2,7 @@
 AdapNet is a deep learning model for semantic image segmentation, where the goal is to assign semantic labels to every
 pixel in the input image. 
 
-This repository contains our TensorFlow implementation. We provide codes allowing users to train the model, evaluate
+This repository contains our TensorFlow implementation. We provide the codes allowing users to train the model, evaluate
 results in terms of mIoU(mean intersection-over-union). 
 
 If you find the code useful for your research, please consider citing our paper:
@@ -38,6 +38,25 @@ tensorflow-gpu 1.4.0
 ## Configure the network
 
 Download resnet_v1_50 tensorflow pre-trained model for network intialization from [here](https://github.com/tensorflow/models/tree/master/research/slim).
+#### Data
+
+* Augment the default dataset -> augmented-training-dataset.
+  In our case, we first resized the dataset to (768,384) and then augmented it.
+  (random_flip, random_scale and random_crop)
+
+* Convert augmented-training-dataset/val-dataset/test-dataset into .tfrecords format.
+  Prepare a .txt file as follows:
+  ```
+     path_to_modality1/0.png path_to_label/0.png
+     path_to_modality1/1.png path_to_label/1.png
+     path_to_modality1/2.png path_to_label/2.png
+     ...
+  ```
+  Run from dataset folder:
+  ```
+     python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name 
+  ```
+  (Input to model is in BGR and 'NHWC' form)
 
 #### Training
 ```
@@ -47,9 +66,7 @@ Download resnet_v1_50 tensorflow pre-trained model for network intialization fro
     intialize:  path to pre-trained model
     checkpoint: path to save model
     train_data: path to dataset .tfrecords
-    dataset: name of dataset (cityscapes, forest, scannet, synthia or sun)
     batch_size: training batch size
-    type: type of data  (rgb, jet(depth), hha(depth))
     skip_step: how many steps to print loss 
     height: height of input image
     width: width of input image
@@ -66,22 +83,13 @@ Download resnet_v1_50 tensorflow pre-trained model for network intialization fro
     num_classes: number of classes
     checkpoint: path to saved model
     test_data: path to dataset .tfrecords
-    dataset: name of dataset (cityscapes, forest, scannet, synthia or sun)
     batch_size: evaluation batch size
-    type: type of data  (rgb, jet(depth), hha(depth))
     skip_step: how many steps to print mIoU
     height: height of input image
     width: width of input image
     mean: path to mean file 
 ```
-#### Data
-```
-Augment the default dataset -> augmented-dataset.
-Convert it into .tfrecords format. (Use features identical to the one given in dataset/helper.py parser function)
-             
-(Input to model is in BGR and 'NHWC' form)
 
-```
 ## Training and Evaluation
 
 #### Start training
@@ -100,5 +108,7 @@ Create the config file for evaluation in config folder.
 ```
 python evaluate.py -c config cityscapes_test.config or python evaluate.py --config cityscapes_test.config
 ```
-
+## Additional Notes:
+   * We provide only single scale evaluation script. Multi-Scales+Flip evaluation will further imporve the model's performance.
+   * We provide only single gpu training script. Training on multiple gpus using synchronized batch normalization with larger batch size will furthur improve the model's performance.
 
