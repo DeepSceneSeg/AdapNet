@@ -22,7 +22,7 @@ year = "2017",
 | ------------- | ------------- | -------------  |
 | Cityscapes    |<img src="images/city.png" width=400> |  <img src="images/city_v1.png" width=400>|
 | Forest  | <img src="images/forest.png" width=400>  |<img src="images/forest_v1.png" width=400> |
-| Sun  | <img src="images/sun1.png" width=400>  | <img src="images/sun_pred.png" width=400>|
+| Sun  | <img src="images/sun2.png" width=400>  | <img src="images/sun_pred.png" width=400>|
 | Synthia  | <img src="images/synthia.png" width=400>  | <img src="images/synthia_v1.png" width=400> |
 | Scannetv2  | <img src="images/scannetv2.png" width=400>  |<img src="images/scannetv2_v1.png" width=400> |
 ## System requirement
