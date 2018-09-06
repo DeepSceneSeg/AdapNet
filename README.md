@@ -16,6 +16,7 @@ If you find the code useful for your research, please consider citing our paper:
   organization={IEEE}
 }
 ```
+
 ## Live Demo
 http://deepscene.cs.uni-freiburg.de
 
@@ -39,10 +40,12 @@ http://deepscene.cs.uni-freiburg.de
 ```
 Python 2.7
 ```
+
 #### Python Packages
 ```
 tensorflow-gpu 1.4.0
 ```
+
 ## Configure the Network
 
 Download the resnet_v1_50 tensorflow pre-trained model for network intialization from [here](https://github.com/tensorflow/models/tree/master/research/slim).
@@ -66,7 +69,7 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
   ```
   (Input to the model is in BGR and 'NHWC' form)
 
-#### Training
+#### Training Params
 ```
     gpu_id: id of gpu to be used
     model: name of the model
@@ -84,7 +87,8 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
     power: parameter for poly learning rate
     mean: path to mean file 
 ```
-#### Evaluation
+
+#### Evaluation Params
 ```
     gpu_id: id of gpu to be used
     model: name of the model
@@ -97,23 +101,24 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
     width: width of input image
     mean: path to mean file 
 ```
+
 ## Training and Evaluation
 
-#### Training
+#### Training Procedure
 Edit the config file for training in config folder.
 Run:
 ```
 python train.py -c config cityscapes_train.config or python train.py --config cityscapes_train.config
 ```
 
-#### Evaluation
+#### Evaluation Procedure
 
 Select a checkpoint to test/validate your model in terms of the mean IoU metric.
 Edit the config file for evaluation in config folder. Run:
-
 ```
 python evaluate.py -c config cityscapes_test.config or python evaluate.py --config cityscapes_test.config
 ```
+
 ## Additional Notes:
    * We only provide the single scale evaluation script. Multi-Scale+Flip evaluation further imporves the performance of the model.
    * The code in this repository only performs training on a single GPU. Multi-GPU training using synchronized batch normalization with larger batch size further improves the performance of the model.
