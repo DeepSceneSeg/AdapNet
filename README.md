@@ -41,8 +41,7 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
 #### Data
 
 * Augment the training data.
-  In our work, we first resized the images in the dataset to 768x384 pixels and then apply a series of augmentations.
-  (random_flip, random_scale and random_crop)
+  In our work, we first resized the images in the dataset to 768x384 pixels and then apply a series of augmentations (random_flip, random_scale and random_crop).
 
 * Convert the training data (augmented), test data and validation data into the .tfrecords format.
   Create a .txt file for each set having entries in the following format:
@@ -52,11 +51,11 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
      path_to_modality1/2.png path_to_label/2.png
      ...
   ```
-  Run the convert_to_tfrecords.py from dataset folder for each of the train, test, val sets to create the tfrecords and mean '.npy' file. The mean file should be only created for the train set:
+  Run the convert_to_tfrecords.py from dataset folder for each of the train, test, val sets to create the tfrecords and the mean '.npy' file. The mean file should be only created for the train set.
   ```
      python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name.tfrecords --mean 1
   ```
-  (Input to model is in BGR and 'NHWC' form)
+  (Input to the model is in BGR and 'NHWC' form)
 
 #### Training
 ```
@@ -93,7 +92,7 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
 
 #### Start training
 Edit the config file for training in config folder.
-Run
+Run:
 ```
 python train.py -c config cityscapes_train.config or python train.py --config cityscapes_train.config
 ```
