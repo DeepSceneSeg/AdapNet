@@ -1,7 +1,7 @@
 # AdapNet:  Adaptive  Semantic  Segmentation in  Adverse  Environmental  Conditions
-AdapNet is a deep learning model for semantic image segmentation, where the goal is to assign semantic labels (e.g., car, road, tree and so on) to every pixel in the input image. AdapNet is easily trainable on a single GPU with 12 GBs of memory and has a fast inference time. AdapNet is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
+AdapNet is a deep learning model for semantic image segmentation, where the goal is to assign semantic labels (e.g., car, road, tree and so on) to every pixel in the input image. AdapNet is easily trainable on a single GPU with 12 GB of memory and has a fast inference time. AdapNet is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
 
-This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mIoU (mean intersection-over-union). 
+This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mean IoU metric. 
 
 If you find the code useful for your research, please consider citing our paper:
 ```
@@ -21,11 +21,11 @@ http://deepscene.cs.uni-freiburg.de
 
 | Dataset       | RGB_Image     | Segmented_Image|
 | ------------- | ------------- | -------------  |
-| Cityscapes    |<img src="images/city.png" width=400> |  <img src="images/city_v1.png" width=390>|
-| Forest  | <img src="images/forest.png" width=400>  |<img src="images/forest_v1.png" width=390> |
-| Sun RGB-D  | <img src="images/sun.png" width=400>  | <img src="images/sun_p.png" width=390>|
-| Synthia  | <img src="images/synthia.png" width=400>  | <img src="images/synthia_v1.png" width=390> |
-| ScanNet v2  | <img src="images/scannet.png" width=400>  |<img src="images/scannet_pr.png" width=390> |
+| Cityscapes    |<img src="images/city.png" width=390> |  <img src="images/city_v1.png" width=390>|
+| Forest  | <img src="images/forest.png" width=390>  |<img src="images/forest_v1.png" width=390> |
+| Sun RGB-D  | <img src="images/sun.png" width=390>  | <img src="images/sun_p.png" width=390>|
+| Synthia  | <img src="images/synthia.png" width=390>  | <img src="images/synthia_v1.png" width=390> |
+| ScanNet v2  | <img src="images/scannet.png" width=390>  |<img src="images/scannet_pr.png" width=390> |
 
 ## Contacts
 * [Abhinav Valada](http://www2.informatik.uni-freiburg.de/~valada/)
@@ -116,3 +116,6 @@ python evaluate.py -c config cityscapes_test.config or python evaluate.py --conf
    * We only provide the single scale evaluation script. Multi-Scale+Flip evaluation further imporves the performance of the model.
    * The code in this repository only performs training on a single GPU. Multi-GPU training using synchronized batch normalization with larger batch size furthur improves the performance of the model.
    * Initializing the model with pre-trained weights from large datasets such as the Mapillary Vistas and BDD100K yields an improved performance.
+   
+## License
+For academic usage, the code is released under the GPLv3 license. For any commercial purpose, please contact the authors.
