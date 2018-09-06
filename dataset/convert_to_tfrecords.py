@@ -40,8 +40,10 @@ def decode(txt):
 def convert(f,record_name):
     count = 0
     writer=tf.python_io.TFRecordWriter(record_name)
+    mean  = np.zeros(cv2.imread(f[0][0]).shape,np.float32)
     for name in f:
         modality1 = cv2.imread(name[0])
+        mean     += modality1
         label     = cv2.imread(name[1][:-1],cv2.IMREAD_GRAYSCALE)  
         height    = modality1.shape[0]
         width     = modality1.shape[1]
@@ -59,7 +61,8 @@ def convert(f,record_name):
            print 'Processed data: {}'.format(count)
            sys.stdout.flush()    
         count=count+1
-
+    mean = mean/count
+    np.save(record_name.split('.')[0]+'.npy',mean)
 
 
 
