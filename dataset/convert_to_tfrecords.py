@@ -27,6 +27,7 @@ def _bytes_feature(data):
 parser = argparse.ArgumentParser()
 parser.add_argument('-f','--file')
 parser.add_argument('-r','--record')
+parser.add_argument('-m','--mean')
 
 def decode(txt):
     with open(txt) as f:
@@ -37,13 +38,15 @@ def decode(txt):
         file_list.append(temp)
     return file_list
      
-def convert(f,record_name):
+def convert(f,record_name,mean_flag):
     count = 0
     writer=tf.python_io.TFRecordWriter(record_name)
-    mean  = np.zeros(cv2.imread(f[0][0]).shape,np.float32)
+    if mean_flag:
+       mean  = np.zeros(cv2.imread(f[0][0]).shape,np.float32)
     for name in f:
         modality1 = cv2.imread(name[0])
-        mean     += modality1
+        if mean_flag:
+           mean     += modality1
         label     = cv2.imread(name[1][:-1],cv2.IMREAD_GRAYSCALE)  
         height    = modality1.shape[0]
         width     = modality1.shape[1]
@@ -61,8 +64,9 @@ def convert(f,record_name):
            print 'Processed data: {}'.format(count)
            sys.stdout.flush()    
         count=count+1
-    mean = mean/count
-    np.save(record_name.split('.')[0]+'.npy',mean)
+    if mean_flag:    
+       mean = mean/count
+       np.save(record_name.split('.')[0]+'.npy',mean)
 
 
 
@@ -82,7 +86,10 @@ def main():
     else:
         print '--record tfrecord name missing'
         return
-    convert(file_list,record_name)
+    mean_flag=0
+    if args.record:
+        mean_flag=args.mean
+    convert(file_list,record_name,mean_flag)
 
 if __name__=='__main__':
         main()
