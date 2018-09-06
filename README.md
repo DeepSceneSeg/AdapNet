@@ -21,11 +21,11 @@ http://deepscene.cs.uni-freiburg.de
 
 | Dataset       | RGB_Image     | Segmented_Image|
 | ------------- | ------------- | -------------  |
-| Cityscapes    |<img src="images/city.png" width=390> |  <img src="images/city_v1.png" width=390>|
-| Forest  | <img src="images/forest.png" width=390>  |<img src="images/forest_v1.png" width=390> |
-| Sun RGB-D  | <img src="images/sun.png" width=390>  | <img src="images/sun_p.png" width=390>|
-| Synthia  | <img src="images/synthia.png" width=390>  | <img src="images/synthia_v1.png" width=390> |
-| ScanNet v2  | <img src="images/scannet.png" width=390>  |<img src="images/scannet_pr.png" width=390> |
+| Cityscapes    |<img src="images/city.png" width=380> |  <img src="images/city_v1.png" width=380>|
+| Forest  | <img src="images/forest.png" width=380>  |<img src="images/forest_v1.png" width=380> |
+| Sun RGB-D  | <img src="images/sun.png" width=380>  | <img src="images/sun_p.png" width=380>|
+| Synthia  | <img src="images/synthia.png" width=380>  | <img src="images/synthia_v1.png" width=380> |
+| ScanNet v2  | <img src="images/scannet.png" width=380>  |<img src="images/scannet_pr.png" width=380> |
 
 ## Contacts
 * [Abhinav Valada](http://www2.informatik.uni-freiburg.de/~valada/)
@@ -118,4 +118,4 @@ python evaluate.py -c config cityscapes_test.config or python evaluate.py --conf
    * Initializing the model with pre-trained weights from large datasets such as the Mapillary Vistas and BDD100K yields an improved performance.
    
 ## License
-For academic usage, the code is released under the GPLv3 license. For any commercial purpose, please contact the authors.
+For academic usage, the code is released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license. For any commercial purpose, please contact the authors.
