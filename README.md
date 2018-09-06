@@ -1,7 +1,7 @@
 # AdapNet:  Adaptive  Semantic  Segmentation in  Adverse  Environmental  Conditions
 AdapNet is a deep learning model for semantic image segmentation that is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
 
-This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results results in terms of mIoU (mean intersection-over-union). 
+This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mIoU (mean intersection-over-union). 
 
 If you find the code useful for your research, please consider citing our paper:
 ```
@@ -52,7 +52,7 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
      path_to_modality1/2.png path_to_label/2.png
      ...
   ```
-  Run the convert_to_tfrecords.py from dataset folder for each of the train, test, val sets to create the tfrecords and mean '.npy' files:
+  Run the convert_to_tfrecords.py from dataset folder for each of the train, test, val sets to create the tfrecords and mean '.npy' file. The mean file should be only created for the train set:
   ```
      python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name.tfrecords --mean 1
   ```
