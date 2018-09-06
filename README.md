@@ -35,7 +35,7 @@ http://deepscene.cs.uni-freiburg.de
 
 ## System Requirements
 
-#### Programming language
+#### Programming Language
 ```
 Python 2.7
 ```
