@@ -1,5 +1,5 @@
 # AdapNet:  Adaptive  Semantic  Segmentation in  Adverse  Environmental  Conditions
-AdapNet is a deep learning model for semantic image segmentation that is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
+AdapNet is a deep learning model for semantic image segmentation, where the goal is to assign semantic labels (e.g., car, road, tree and so on) to every pixel in the input image. AdapNet is easily trainable on a single GPU with 12 GBs of memory and has a fast inference time. AdapNet is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
 
 This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mIoU (mean intersection-over-union). 
 
@@ -13,6 +13,8 @@ pages={4644--4651},
 year = "2017",
 }
 ```
+## Live Demo
+http://deepscene.cs.uni-freiburg.de
 
 ## Example Segmentation Results:
 
@@ -22,7 +24,11 @@ year = "2017",
 | Forest  | <img src="images/forest.png" width=400>  |<img src="images/forest_v1.png" width=390> |
 | Sun RGB-D  | <img src="images/sun.png" width=400>  | <img src="images/sun_p.png" width=390>|
 | Synthia  | <img src="images/synthia.png" width=400>  | <img src="images/synthia_v1.png" width=390> |
-| Scannet v2  | <img src="images/scannet.png" width=400>  |<img src="images/scannet_pr.png" width=390> |
+| ScanNet v2  | <img src="images/scannet.png" width=400>  |<img src="images/scannet_pr.png" width=390> |
+
+## Contacts
+* [Abhinav Valada](http://www2.informatik.uni-freiburg.de/~valada/)
+* [Rohit Mohan](https://github.com/mohan1914)
 
 ## System Requirements
 
@@ -100,7 +106,7 @@ python train.py -c config cityscapes_train.config or python train.py --config ci
 #### Eval
 
 Select a checkpoint to test/validate your model in terms of the mean IoU metric.
-Edit the config file for evaluation in config folder.
+Edit the config file for evaluation in config folder. Run:
 
 ```
 python evaluate.py -c config cityscapes_test.config or python evaluate.py --config cityscapes_test.config
