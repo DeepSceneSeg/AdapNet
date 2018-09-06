@@ -86,7 +86,7 @@ def main():
     else:
         print '--record tfrecord name missing'
         return
-    mean_flag=0
+    mean_flag=False
     if args.record:
         mean_flag=args.mean
     convert(file_list,record_name,mean_flag)
