@@ -99,14 +99,14 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
 ```
 ## Training and Evaluation
 
-#### Start training
+#### Training
 Edit the config file for training in config folder.
 Run:
 ```
 python train.py -c config cityscapes_train.config or python train.py --config cityscapes_train.config
 ```
 
-#### Eval
+#### Evaluation
 
 Select a checkpoint to test/validate your model in terms of the mean IoU metric.
 Edit the config file for evaluation in config folder. Run:
