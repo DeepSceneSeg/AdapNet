@@ -53,7 +53,7 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
   ```
   Run the convert_to_tfrecords.py from dataset folder for each of the train, test, val sets to create the tfrecords and the mean '.npy' file. The mean file should be only created for the train set.
   ```
-     python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name.tfrecords --mean 1
+     python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name.tfrecords --mean True
   ```
   (Input to the model is in BGR and 'NHWC' form)
 
