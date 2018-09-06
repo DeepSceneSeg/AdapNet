@@ -3,7 +3,7 @@ AdapNet is a deep learning model for semantic image segmentation, where the goal
 
 This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of the mean IoU metric.
 
-Adapnet can further be used with [CMODE](https://github.com/DeepSceneSeg/CMoDE) or [SSMA](https://github.com/DeepSceneSeg/SSMA) fusion schemes for multimodal semantic segmentation.
+Adapnet can further be used with [CMoDE](https://github.com/DeepSceneSeg/CMoDE) or [SSMA](https://github.com/DeepSceneSeg/SSMA) fusion schemes for multimodal semantic segmentation.
 
 If you find the code useful for your research, please consider citing our paper:
 ```
