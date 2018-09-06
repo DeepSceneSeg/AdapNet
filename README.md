@@ -1,7 +1,9 @@
 # AdapNet:  Adaptive  Semantic  Segmentation in  Adverse  Environmental  Conditions
 AdapNet is a deep learning model for semantic image segmentation, where the goal is to assign semantic labels (e.g., car, road, tree and so on) to every pixel in the input image. AdapNet is easily trainable on a single GPU with 12 GB of memory and has a fast inference time. AdapNet is benchmarked on Cityscapes, Synthia, ScanNet, SUN RGB-D and Freiburg Forest datasets.
 
-This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mean IoU metric. 
+This repository contains our TensorFlow implementation of AdapNet which allows you to train your own model on any dataset and evaluate the results in terms of mean IoU metric.
+
+Adapnet can further be used with [CMODE](https://github.com/DeepSceneSeg/CMoDE) or [SSMA](https://github.com/DeepSceneSeg/SSMA) fusion schemes for multimodal semantic segmentation.
 
 If you find the code useful for your research, please consider citing our paper:
 ```
@@ -41,7 +43,7 @@ Python 2.7
 ```
 tensorflow-gpu 1.4.0
 ```
-## Configure the network
+## Configure the Network
 
 Download the resnet_v1_50 tensorflow pre-trained model for network intialization from [here](https://github.com/tensorflow/models/tree/master/research/slim).
 
