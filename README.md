@@ -21,11 +21,11 @@ http://deepscene.cs.uni-freiburg.de
 
 | Dataset       | RGB_Image     | Segmented_Image|
 | ------------- | ------------- | -------------  |
-| Cityscapes    |<img src="images/city.png" width=380> |  <img src="images/city_v1.png" width=380>|
-| Forest  | <img src="images/forest.png" width=380>  |<img src="images/forest_v1.png" width=380> |
-| Sun RGB-D  | <img src="images/sun.png" width=380>  | <img src="images/sun_p.png" width=380>|
-| Synthia  | <img src="images/synthia.png" width=380>  | <img src="images/synthia_v1.png" width=380> |
-| ScanNet v2  | <img src="images/scannet.png" width=380>  |<img src="images/scannet_pr.png" width=380> |
+| Cityscapes    |<img src="images/city.png" width=300> |  <img src="images/city_v1.png" width=300>|
+| Forest  | <img src="images/forest.png" width=300>  |<img src="images/forest_v1.png" width=300> |
+| Sun RGB-D  | <img src="images/sun.png" width=300>  | <img src="images/sun_p.png" width=300>|
+| Synthia  | <img src="images/synthia.png" width=300>  | <img src="images/synthia_v1.png" width=300> |
+| ScanNet v2  | <img src="images/scannet.png" width=300>  |<img src="images/scannet_pr.png" width=300> |
 
 ## Contacts
 * [Abhinav Valada](http://www2.informatik.uni-freiburg.de/~valada/)
