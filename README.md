@@ -6,17 +6,18 @@ This repository contains our TensorFlow implementation of AdapNet which allows y
 If you find the code useful for your research, please consider citing our paper:
 ```
 @inproceedings{valada2017icra,
-author = "Valada, Abhinav and Vertens, Johan and Dhall, Ankit and Burgard, Wolfram",
-title = "AdapNet: Adaptive Semantic Segmentation in Adverse Environmental Conditions",
-booktitle = "Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)",
+author = {Valada, Abhinav and Vertens, Johan and Dhall, Ankit and Burgard, Wolfram},
+title = {AdapNet: Adaptive Semantic Segmentation in Adverse Environmental Conditions},
+booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
 pages={4644--4651},
-year = "2017",
+year = {2017},
+organization={IEEE}
 }
 ```
 ## Live Demo
 http://deepscene.cs.uni-freiburg.de
 
-## Example Segmentation Results:
+## Example Segmentation Results
 
 | Dataset       | RGB_Image     | Segmented_Image|
 | ------------- | ------------- | -------------  |
