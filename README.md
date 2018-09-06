@@ -51,9 +51,9 @@ Download the resnet_v1_50 tensorflow pre-trained model for network intialization
      path_to_modality1/2.png path_to_label/2.png
      ...
   ```
-  Run the convert_to_tfrecords.py from dataset folder to create the tfrecords:
+  Run the convert_to_tfrecords.py from dataset folder to create the tfrecords and mean '.npy' file:
   ```
-     python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name 
+     python convert_to_tfrecords.py --file path_to_.txt_file --record tf_records_name.tfrecords 
   ```
   (Input to model is in BGR and 'NHWC' form)
 
