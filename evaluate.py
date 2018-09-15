@@ -76,8 +76,6 @@ def test_func(config):
             print 'mIoU: ', compute_iou(output_matrix), 'total_data: ', total_num
             break
 
-
-
 def main():
     args = PARSER.parse_args()
     if args.config:
