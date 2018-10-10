@@ -44,7 +44,8 @@ def train_func(config):
         labels_pl = tf.placeholder(tf.float32, [None, config['height'], config['width'],
                                                 config['num_classes']])
         model.build_graph(images_pl, labels_pl)
-
+        model.create_optimizer()
+ 
     config1 = tf.ConfigProto()
     config1.gpu_options.allow_growth = True
     sess = tf.Session(config=config1)
@@ -52,13 +53,9 @@ def train_func(config):
     step = 0
     total_loss = 0.0
     t0 = None
-    import_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
-    print 'total_variables_loaded:', len(import_variables)
     ckpt = tf.train.get_checkpoint_state(os.path.dirname(os.path.join(config['checkpoint'],
                                                                       'checkpoint')))
     if ckpt and ckpt.model_checkpoint_path:
-        model.create_optimizer()
-        sess.run(tf.global_variables_initializer())
         saver = tf.train.Saver(max_to_keep=1000)
         saver.restore(sess, ckpt.model_checkpoint_path)
         step = int(ckpt.model_checkpoint_path.split('/')[-1].split('-')[-1])+1
@@ -66,20 +63,20 @@ def train_func(config):
         print 'Model Loaded'
 
     else:
-        initialize_variables = {}
-        var_list = ['conv1/', 'block']
-        for var in import_variables:
-            if any(elem in var.name for elem in var_list):
+        reader = tf.train.NewCheckpointReader(config['intialize'])
+        var_str = reader.debug_string()
+        name_var = re.findall('[A-Za-z0-9/:_]+ ', var_str)
+        import_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
+        initialize_variables = {} 
+        for var in import_variables: 
+            temp =var.name.split(':')[0]+' ' 
+            if temp in  name_var:
                 initialize_variables[var.name.split(':')[0]] = var
 
         saver = tf.train.Saver(initialize_variables)
         saver.restore(save_path=config['intialize'], sess=sess)
-        model.create_optimizer()
         saver = tf.train.Saver(max_to_keep=1000)
-        sess.run(tf.global_variables_initializer())
         print 'Intialized'
-
-    mean = np.load(config['mean'])
 
     while 1:
         try:
