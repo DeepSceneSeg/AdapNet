@@ -64,20 +64,20 @@ def train_func(config):
         print 'Model Loaded'
 
     else:
-        reader = tf.train.NewCheckpointReader(config['intialize'])
-        var_str = reader.debug_string()
-        name_var = re.findall('[A-Za-z0-9/:_]+ ', var_str)
-        import_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
-        initialize_variables = {} 
-        for var in import_variables: 
-            temp =var.name.split(':')[0]+' ' 
-            if temp in  name_var:
-                initialize_variables[var.name.split(':')[0]] = var
+        if 'intialize' in config:
+            reader = tf.train.NewCheckpointReader(config['intialize'])
+            var_str = reader.debug_string()
+            name_var = re.findall('[A-Za-z0-9/:_]+ ', var_str)
+            import_variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
+            initialize_variables = {} 
+            for var in import_variables: 
+                if var.name+' ' in  name_var:
+                    initialize_variables[var.name] = var
 
-        saver = tf.train.Saver(initialize_variables)
-        saver.restore(save_path=config['intialize'], sess=sess)
+            saver = tf.train.Saver(initialize_variables)
+            saver.restore(save_path=config['intialize'], sess=sess)
+            print 'Pretrained Intialization'
         saver = tf.train.Saver(max_to_keep=1000)
-        print 'Intialized'
 
     while 1:
         try:
